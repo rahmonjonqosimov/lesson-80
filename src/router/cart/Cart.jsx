@@ -4,6 +4,7 @@ import numberBrm from "number-brm";
 import { MdDeleteOutline } from "react-icons/md";
 import Product from "../../components/products/Product";
 import { useGetProductsQuery } from "../../context/productApi";
+import { motion } from "framer-motion";
 
 const Cart = () => {
   useEffect(() => {
@@ -47,7 +48,11 @@ const Cart = () => {
   ));
   const sum = cart.reduce((acc, el) => acc + el.price * 12500 * el.quantity, 0);
   return (
-    <>
+    <motion.div
+      initial={{ transform: "translate(100%, 0)" }}
+      animate={{ transform: "translate(0, 0)" }}
+      exit={{ transform: "translate(100%, 0)", transition: { duration: 0.1 } }}
+    >
       <div className="container">
         <h2>Savat</h2>
         <div className="cart__page">
@@ -84,7 +89,7 @@ const Cart = () => {
         data={data?.products}
         loading={isLoading}
       />
-    </>
+    </motion.div>
   );
 };
 
