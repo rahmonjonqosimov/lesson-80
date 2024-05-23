@@ -15,7 +15,6 @@
     justify-content: space-between;
     align-items: center;
     transition: 0.3s;
-    // border: 1px solid #ddd;
     gap: 30px;
     border-radius: 6px;
     background: #fe2722;
@@ -31,11 +30,24 @@
       flex: 1;
       height: 52px;
       border-radius: 6px;
-      overflow: hidden;
       background: #fff;
       position: relative;
       z-index: 11;
       transition: 0.3s;
+      .search__item {
+        display: flex;
+        align-items: center;
+        gap: 20px;
+        border-bottom: 1px solid #ddd;
+        margin-bottom: 10px;
+        padding-bottom: 10px;
+        img {
+          width: 100px;
+          height: 100px;
+          object-fit: contain;
+        }
+      }
+
       input {
         flex: 1;
         border: none;
@@ -43,6 +55,7 @@
         background: transparent;
         outline: none;
       }
+
       button {
         border: none;
         padding: 0 10px;
@@ -51,6 +64,21 @@
         margin: 4px;
         cursor: pointer;
       }
+      .serach__item {
+        background: #fff;
+        width: 100%;
+        max-height: 400px;
+        position: absolute;
+        top: 100%;
+        padding: 20px;
+        z-index: 12;
+        border-radius: 0 0 6px 6px;
+        overflow: hidden;
+        overflow-y: auto;
+      }
+    }
+    .serach__border {
+      border-radius: 6px 6px 0 0;
     }
     ul {
       display: flex;
@@ -251,6 +279,26 @@
       box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.2);
     }
   }
+}
+.btn {
+  padding: 10px 20px;
+  background: #e4e4e4;
+  border: none;
+  border-radius: 10px;
+  font-size: 16px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: 0.3s;
+  margin: 0 auto 30px;
+  &:hover {
+    background: #ececea;
+  }
+  &:active {
+    transform: scale(0.9);
+  }
+}
+h2 {
+  margin: 20px 0;
 }
 
 .cart__page {

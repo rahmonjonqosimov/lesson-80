@@ -80,7 +80,7 @@ const Cart = () => {
         </div>
       </div>
       <Product
-        title={"Maxsulotlat"}
+        title={"Maxsulotlar"}
         data={data?.products}
         loading={isLoading}
       />

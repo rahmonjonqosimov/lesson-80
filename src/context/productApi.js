@@ -5,7 +5,14 @@ export const productApi = api.injectEndpoints({
     // Get request
     getProducts: build.query({
       query: (params) => ({
-        url: "/products",
+        url: "/products?limit=20",
+        params,
+      }),
+      providesTags: ["Product"],
+    }),
+    getSearchProducts: build.query({
+      query: (params) => ({
+        url: "/products/search",
         params,
       }),
       providesTags: ["Product"],
@@ -44,4 +51,5 @@ export const {
   useDeleteProductMutation,
   useCreateProductMutation,
   useUpdateProductMutation,
+  useGetSearchProductsQuery,
 } = productApi;

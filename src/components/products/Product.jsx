@@ -61,6 +61,7 @@ const Product = ({ data, loading, title }) => {
     <div className="container">
       <h2>{title}</h2>
       <div className="wrapper">{product}</div>
+      {/* <button className="btn">Yanada ko'proq ko'rish</button> */}
     </div>
   );
 };
